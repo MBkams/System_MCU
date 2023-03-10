@@ -1,0 +1,106 @@
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"led.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/led.c"
+  18              		.section	.text.LedStart,"ax",%progbits
+  19              		.align	1
+  20              		.global	LedStart
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  25              	LedStart:
+  26              	.LFB0:
+   1:Core/Src/led.c **** #include "led.h"
+   2:Core/Src/led.c **** 
+   3:Core/Src/led.c **** void LedStart(void){
+  27              		.loc 1 3 20 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+   4:Core/Src/led.c **** 
+   5:Core/Src/led.c **** }
+  32              		.loc 1 5 1 view .LVU1
+  33              		@ sp needed
+  34 0000 7047     		bx	lr
+  35              		.cfi_endproc
+  36              	.LFE0:
+  38              		.section	.text.LedSetValue,"ax",%progbits
+  39              		.align	1
+  40              		.global	LedSetValue
+  41              		.syntax unified
+  42              		.code	16
+  43              		.thumb_func
+  45              	LedSetValue:
+  46              	.LVL0:
+  47              	.LFB1:
+   6:Core/Src/led.c **** 
+   7:Core/Src/led.c **** void LedSetValue(unsigned int val){
+  48              		.loc 1 7 35 view -0
+  49              		.cfi_startproc
+  50              		@ args = 0, pretend = 0, frame = 0
+  51              		@ frame_needed = 0, uses_anonymous_args = 0
+  52              		@ link register save eliminated.
+   8:Core/Src/led.c **** 
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 2
+
+
+   9:Core/Src/led.c **** }
+  53              		.loc 1 9 1 view .LVU3
+  54              		@ sp needed
+  55 0000 7047     		bx	lr
+  56              		.cfi_endproc
+  57              	.LFE1:
+  59              		.section	.text.LedPulse,"ax",%progbits
+  60              		.align	1
+  61              		.global	LedPulse
+  62              		.syntax unified
+  63              		.code	16
+  64              		.thumb_func
+  66              	LedPulse:
+  67              	.LFB2:
+  10:Core/Src/led.c **** 
+  11:Core/Src/led.c **** void LedPulse(void){
+  68              		.loc 1 11 20 view -0
+  69              		.cfi_startproc
+  70              		@ args = 0, pretend = 0, frame = 0
+  71              		@ frame_needed = 0, uses_anonymous_args = 0
+  72              		@ link register save eliminated.
+  12:Core/Src/led.c **** 
+  13:Core/Src/led.c **** }...
+  73              		.loc 1 13 1 view .LVU5
+  74              		@ sp needed
+  75 0000 7047     		bx	lr
+  76              		.cfi_endproc
+  77              	.LFE2:
+  79              		.text
+  80              	.Letext0:
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 led.c
+C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:19     .text.LedStart:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:25     .text.LedStart:0000000000000000 LedStart
+C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:39     .text.LedSetValue:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:45     .text.LedSetValue:0000000000000000 LedSetValue
+C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:60     .text.LedPulse:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:66     .text.LedPulse:0000000000000000 LedPulse
+
+NO UNDEFINED SYMBOLS
