@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 1
+ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -25,82 +25,220 @@ ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 1
   22              		.code	16
   23              		.thumb_func
   25              	LedStart:
-  26              	.LFB0:
+  26              	.LFB40:
    1:Core/Src/led.c **** #include "led.h"
-   2:Core/Src/led.c **** 
-   3:Core/Src/led.c **** void LedStart(void){
-  27              		.loc 1 3 20 view -0
+   2:Core/Src/led.c **** #include "tim.h"
+   3:Core/Src/led.c **** 
+   4:Core/Src/led.c **** void LedStart(void){
+  27              		.loc 1 4 20 view -0
   28              		.cfi_startproc
   29              		@ args = 0, pretend = 0, frame = 0
   30              		@ frame_needed = 0, uses_anonymous_args = 0
-  31              		@ link register save eliminated.
-   4:Core/Src/led.c **** 
-   5:Core/Src/led.c **** }
-  32              		.loc 1 5 1 view .LVU1
-  33              		@ sp needed
-  34 0000 7047     		bx	lr
-  35              		.cfi_endproc
-  36              	.LFE0:
-  38              		.section	.text.LedSetValue,"ax",%progbits
-  39              		.align	1
-  40              		.global	LedSetValue
-  41              		.syntax unified
-  42              		.code	16
-  43              		.thumb_func
-  45              	LedSetValue:
-  46              	.LVL0:
-  47              	.LFB1:
-   6:Core/Src/led.c **** 
-   7:Core/Src/led.c **** void LedSetValue(unsigned int val){
-  48              		.loc 1 7 35 view -0
-  49              		.cfi_startproc
-  50              		@ args = 0, pretend = 0, frame = 0
-  51              		@ frame_needed = 0, uses_anonymous_args = 0
-  52              		@ link register save eliminated.
-   8:Core/Src/led.c **** 
-ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 2
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
+   5:Core/Src/led.c ****     // Démarre le timer
+   6:Core/Src/led.c ****     HAL_TIM_Base_Start(&htim2);
+  35              		.loc 1 6 5 view .LVU1
+  36 0002 064C     		ldr	r4, .L2
+  37 0004 2000     		movs	r0, r4
+  38 0006 FFF7FEFF 		bl	HAL_TIM_Base_Start
+  39              	.LVL0:
+   7:Core/Src/led.c ****     htim2.Instance->CCR1 = 127; // Rapport Cyclique 255/127.5 = 0.5 
+  40              		.loc 1 7 5 view .LVU2
+  41              		.loc 1 7 10 is_stmt 0 view .LVU3
+  42 000a 2368     		ldr	r3, [r4]
+  43              		.loc 1 7 26 view .LVU4
+  44 000c 7F22     		movs	r2, #127
+  45 000e 5A63     		str	r2, [r3, #52]
+   8:Core/Src/led.c ****     HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
+  46              		.loc 1 8 5 is_stmt 1 view .LVU5
+  47 0010 0021     		movs	r1, #0
+  48 0012 2000     		movs	r0, r4
+  49 0014 FFF7FEFF 		bl	HAL_TIM_PWM_Start
+  50              	.LVL1:
+ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 2
 
 
    9:Core/Src/led.c **** }
-  53              		.loc 1 9 1 view .LVU3
-  54              		@ sp needed
-  55 0000 7047     		bx	lr
-  56              		.cfi_endproc
-  57              	.LFE1:
-  59              		.section	.text.LedPulse,"ax",%progbits
-  60              		.align	1
-  61              		.global	LedPulse
-  62              		.syntax unified
-  63              		.code	16
-  64              		.thumb_func
-  66              	LedPulse:
-  67              	.LFB2:
+  51              		.loc 1 9 1 is_stmt 0 view .LVU6
+  52              		@ sp needed
+  53 0018 10BD     		pop	{r4, pc}
+  54              	.L3:
+  55 001a C046     		.align	2
+  56              	.L2:
+  57 001c 00000000 		.word	htim2
+  58              		.cfi_endproc
+  59              	.LFE40:
+  61              		.section	.text.LedSetValue,"ax",%progbits
+  62              		.align	1
+  63              		.global	LedSetValue
+  64              		.syntax unified
+  65              		.code	16
+  66              		.thumb_func
+  68              	LedSetValue:
+  69              	.LVL2:
+  70              	.LFB41:
   10:Core/Src/led.c **** 
-  11:Core/Src/led.c **** void LedPulse(void){
-  68              		.loc 1 11 20 view -0
-  69              		.cfi_startproc
-  70              		@ args = 0, pretend = 0, frame = 0
-  71              		@ frame_needed = 0, uses_anonymous_args = 0
-  72              		@ link register save eliminated.
-  12:Core/Src/led.c **** 
-  13:Core/Src/led.c **** }...
-  73              		.loc 1 13 1 view .LVU5
-  74              		@ sp needed
-  75 0000 7047     		bx	lr
-  76              		.cfi_endproc
-  77              	.LFE2:
-  79              		.text
-  80              	.Letext0:
-ARM GAS  C:\Users\billa\AppData\Local\Temp\ccYmJEku.s 			page 3
+  11:Core/Src/led.c **** void LedSetValue(unsigned int val){
+  71              		.loc 1 11 35 is_stmt 1 view -0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75              		@ link register save eliminated.
+  12:Core/Src/led.c ****     // Configure le rapport cyclique de la PWM entre 0 et 255
+  13:Core/Src/led.c ****     htim2.Instance->CCR1 = val;
+  76              		.loc 1 13 5 view .LVU8
+  77              		.loc 1 13 10 is_stmt 0 view .LVU9
+  78 0000 014B     		ldr	r3, .L5
+  79 0002 1B68     		ldr	r3, [r3]
+  80              		.loc 1 13 26 view .LVU10
+  81 0004 5863     		str	r0, [r3, #52]
+  14:Core/Src/led.c **** }
+  82              		.loc 1 14 1 view .LVU11
+  83              		@ sp needed
+  84 0006 7047     		bx	lr
+  85              	.L6:
+  86              		.align	2
+  87              	.L5:
+  88 0008 00000000 		.word	htim2
+  89              		.cfi_endproc
+  90              	.LFE41:
+  92              		.section	.text.LedPulse,"ax",%progbits
+  93              		.align	1
+  94              		.global	LedPulse
+  95              		.syntax unified
+  96              		.code	16
+  97              		.thumb_func
+  99              	LedPulse:
+ 100              	.LFB42:
+  15:Core/Src/led.c **** 
+  16:Core/Src/led.c **** void LedPulse(void){
+ 101              		.loc 1 16 20 is_stmt 1 view -0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 3
+
+
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105 0000 10B5     		push	{r4, lr}
+ 106              		.cfi_def_cfa_offset 8
+ 107              		.cfi_offset 4, -8
+ 108              		.cfi_offset 14, -4
+  17:Core/Src/led.c ****     // À chaque appel, cette fonction incrémente la luminosité de la LED
+  18:Core/Src/led.c ****     // Arrivé à la valeur maximale, chaque appel décrémente la LED
+  19:Core/Src/led.c ****     static unsigned int lux = 1;
+ 109              		.loc 1 19 5 view .LVU13
+  20:Core/Src/led.c ****     static unsigned int up = 1;
+ 110              		.loc 1 20 5 view .LVU14
+  21:Core/Src/led.c **** 
+  22:Core/Src/led.c ****     if (lux >= 255)
+ 111              		.loc 1 22 5 view .LVU15
+ 112              		.loc 1 22 13 is_stmt 0 view .LVU16
+ 113 0002 0A4B     		ldr	r3, .L10
+ 114 0004 1868     		ldr	r0, [r3]
+ 115              		.loc 1 22 8 view .LVU17
+ 116 0006 FE28     		cmp	r0, #254
+ 117 0008 02D9     		bls	.L8
+  23:Core/Src/led.c ****     {
+  24:Core/Src/led.c ****         up = 0; //Si la luminosité atteint la valeur max, alors on décrémente
+ 118              		.loc 1 24 9 is_stmt 1 view .LVU18
+ 119              		.loc 1 24 12 is_stmt 0 view .LVU19
+ 120 000a 094B     		ldr	r3, .L10+4
+ 121 000c 0022     		movs	r2, #0
+ 122 000e 1A60     		str	r2, [r3]
+ 123              	.L8:
+  25:Core/Src/led.c ****     }
+  26:Core/Src/led.c **** 
+  27:Core/Src/led.c ****     if (lux <= 0)
+ 124              		.loc 1 27 5 is_stmt 1 view .LVU20
+ 125              		.loc 1 27 8 is_stmt 0 view .LVU21
+ 126 0010 0028     		cmp	r0, #0
+ 127 0012 02D1     		bne	.L9
+  28:Core/Src/led.c ****     {
+  29:Core/Src/led.c ****         up = 1; //Si la luminosité atteint la valeur m, alors on incrémente
+ 128              		.loc 1 29 9 is_stmt 1 view .LVU22
+ 129              		.loc 1 29 12 is_stmt 0 view .LVU23
+ 130 0014 064B     		ldr	r3, .L10+4
+ 131 0016 0122     		movs	r2, #1
+ 132 0018 1A60     		str	r2, [r3]
+ 133              	.L9:
+  30:Core/Src/led.c ****     }
+  31:Core/Src/led.c **** 
+  32:Core/Src/led.c ****     if(up = 0){
+ 134              		.loc 1 32 5 is_stmt 1 view .LVU24
+ 135              		.loc 1 32 11 is_stmt 0 view .LVU25
+ 136 001a 054B     		ldr	r3, .L10+4
+ 137 001c 0022     		movs	r2, #0
+ 138 001e 1A60     		str	r2, [r3]
+  33:Core/Src/led.c ****         lux--;
+  34:Core/Src/led.c ****     }else{
+  35:Core/Src/led.c ****         lux++;
+ 139              		.loc 1 35 9 is_stmt 1 view .LVU26
+ 140              		.loc 1 35 12 is_stmt 0 view .LVU27
+ 141 0020 0130     		adds	r0, r0, #1
+ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 4
+
+
+ 142 0022 024B     		ldr	r3, .L10
+ 143 0024 1860     		str	r0, [r3]
+  36:Core/Src/led.c ****     }
+  37:Core/Src/led.c **** 
+  38:Core/Src/led.c ****     LedSetValue(lux);
+ 144              		.loc 1 38 5 is_stmt 1 view .LVU28
+ 145 0026 FFF7FEFF 		bl	LedSetValue
+ 146              	.LVL3:
+  39:Core/Src/led.c ****     
+  40:Core/Src/led.c **** 
+  41:Core/Src/led.c **** }...
+ 147              		.loc 1 41 1 is_stmt 0 view .LVU29
+ 148              		@ sp needed
+ 149 002a 10BD     		pop	{r4, pc}
+ 150              	.L11:
+ 151              		.align	2
+ 152              	.L10:
+ 153 002c 00000000 		.word	lux.1
+ 154 0030 00000000 		.word	up.0
+ 155              		.cfi_endproc
+ 156              	.LFE42:
+ 158              		.section	.bss.up.0,"aw",%nobits
+ 159              		.align	2
+ 162              	up.0:
+ 163 0000 00000000 		.space	4
+ 164              		.section	.data.lux.1,"aw"
+ 165              		.align	2
+ 168              	lux.1:
+ 169 0000 01000000 		.word	1
+ 170              		.text
+ 171              	.Letext0:
+ 172              		.file 2 "c:\\users\\billa\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 173              		.file 3 "c:\\users\\billa\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 174              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l021xx.h"
+ 175              		.file 5 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h"
+ 176              		.file 6 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h"
+ 177              		.file 7 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h"
+ 178              		.file 8 "Core/Inc/tim.h"
+ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 led.c
-C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:19     .text.LedStart:0000000000000000 $t
-C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:25     .text.LedStart:0000000000000000 LedStart
-C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:39     .text.LedSetValue:0000000000000000 $t
-C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:45     .text.LedSetValue:0000000000000000 LedSetValue
-C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:60     .text.LedPulse:0000000000000000 $t
-C:\Users\billa\AppData\Local\Temp\ccYmJEku.s:66     .text.LedPulse:0000000000000000 LedPulse
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:19     .text.LedStart:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:25     .text.LedStart:0000000000000000 LedStart
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:57     .text.LedStart:000000000000001c $d
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:62     .text.LedSetValue:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:68     .text.LedSetValue:0000000000000000 LedSetValue
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:88     .text.LedSetValue:0000000000000008 $d
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:93     .text.LedPulse:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:99     .text.LedPulse:0000000000000000 LedPulse
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:153    .text.LedPulse:000000000000002c $d
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:168    .data.lux.1:0000000000000000 lux.1
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:162    .bss.up.0:0000000000000000 up.0
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:159    .bss.up.0:0000000000000000 $d
+C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:165    .data.lux.1:0000000000000000 $d
 
-NO UNDEFINED SYMBOLS
+UNDEFINED SYMBOLS
+HAL_TIM_Base_Start
+HAL_TIM_PWM_Start
+htim2
