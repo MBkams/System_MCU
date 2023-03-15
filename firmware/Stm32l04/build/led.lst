@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 1
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s 			page 1
 
 
    1              		.cpu cortex-m0plus
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 1
   48 0012 2000     		movs	r0, r4
   49 0014 FFF7FEFF 		bl	HAL_TIM_PWM_Start
   50              	.LVL1:
-ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 2
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s 			page 2
 
 
    9:Core/Src/led.c **** }
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 1
  101              		.loc 1 16 20 is_stmt 1 view -0
  102              		.cfi_startproc
  103              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 3
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s 			page 3
 
 
  104              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -178,14 +178,14 @@ ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 1
  139              		.loc 1 35 9 is_stmt 1 view .LVU26
  140              		.loc 1 35 12 is_stmt 0 view .LVU27
  141 0020 0130     		adds	r0, r0, #1
-ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 4
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s 			page 4
 
 
  142 0022 024B     		ldr	r3, .L10
  143 0024 1860     		str	r0, [r3]
   36:Core/Src/led.c ****     }
   37:Core/Src/led.c **** 
-  38:Core/Src/led.c ****     LedSetValue(lux);
+  38:Core/Src/led.c ****     LedSetValue(lux); 
  144              		.loc 1 38 5 is_stmt 1 view .LVU28
  145 0026 FFF7FEFF 		bl	LedSetValue
  146              	.LVL3:
@@ -219,24 +219,24 @@ ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 1
  176              		.file 6 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h"
  177              		.file 7 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h"
  178              		.file 8 "Core/Inc/tim.h"
-ARM GAS  C:\Users\billa\AppData\Local\Temp\cch6hNjT.s 			page 5
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s 			page 5
 
 
 DEFINED SYMBOLS
                             *ABS*:0000000000000000 led.c
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:19     .text.LedStart:0000000000000000 $t
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:25     .text.LedStart:0000000000000000 LedStart
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:57     .text.LedStart:000000000000001c $d
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:62     .text.LedSetValue:0000000000000000 $t
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:68     .text.LedSetValue:0000000000000000 LedSetValue
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:88     .text.LedSetValue:0000000000000008 $d
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:93     .text.LedPulse:0000000000000000 $t
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:99     .text.LedPulse:0000000000000000 LedPulse
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:153    .text.LedPulse:000000000000002c $d
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:168    .data.lux.1:0000000000000000 lux.1
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:162    .bss.up.0:0000000000000000 up.0
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:159    .bss.up.0:0000000000000000 $d
-C:\Users\billa\AppData\Local\Temp\cch6hNjT.s:165    .data.lux.1:0000000000000000 $d
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:19     .text.LedStart:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:25     .text.LedStart:0000000000000000 LedStart
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:57     .text.LedStart:000000000000001c $d
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:62     .text.LedSetValue:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:68     .text.LedSetValue:0000000000000000 LedSetValue
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:88     .text.LedSetValue:0000000000000008 $d
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:93     .text.LedPulse:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:99     .text.LedPulse:0000000000000000 LedPulse
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:153    .text.LedPulse:000000000000002c $d
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:168    .data.lux.1:0000000000000000 lux.1
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:162    .bss.up.0:0000000000000000 up.0
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:159    .bss.up.0:0000000000000000 $d
+C:\Users\billa\AppData\Local\Temp\ccg1vtcY.s:165    .data.lux.1:0000000000000000 $d
 
 UNDEFINED SYMBOLS
 HAL_TIM_Base_Start

@@ -35,7 +35,7 @@ void LedPulse(void){
         lux++;
     }
 
-    LedSetValue(lux);
+    LedSetValue(lux); 
     
 
 }

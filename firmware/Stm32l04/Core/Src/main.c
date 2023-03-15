@@ -23,7 +23,6 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
-#include "led.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -94,6 +93,7 @@ int main(void)
   MX_ADC_Init();
   MX_SPI1_Init();
   MX_TIM2_Init();
+  MX_TIM21_Init();
   /* USER CODE BEGIN 2 */
   LedStart();
   /* USER CODE END 2 */
@@ -108,7 +108,7 @@ int main(void)
     //HAL_Delay(1000);
     
     LedPulse();
-    HAL_Delay(1);
+    HAL_Delay(100); 
 
     /* USER CODE END WHILE */
 
