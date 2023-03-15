@@ -36,6 +36,8 @@ BUILD_DIR = build
 ######################################
 # C sources
 C_SOURCES =  \
+Core/Src/Serial.c \
+Core/Src/TimeBase.c \
 Core/Src/adc.c \
 Core/Src/gpio.c \
 Core/Src/led.c \

@@ -23,6 +23,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "Serial.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -95,7 +96,8 @@ int main(void)
   MX_TIM2_Init();
   MX_TIM21_Init();
   /* USER CODE BEGIN 2 */
-  LedStart();
+  //LedStart();
+  //TimeBaseStartIT();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -107,8 +109,12 @@ int main(void)
     //HAL_GPIO_WritePin( GPIOA, GPIO_PIN_8, GPIO_PIN_RESET );
     //HAL_Delay(1000);
     
-    LedPulse();
-    HAL_Delay(100); 
+    //LedPulse();
+    //HAL_Delay(100); 
+
+    char ch;
+    SerialReceiveChar(&ch,1);
+    SerialTransmit(&ch, 1);
 
     /* USER CODE END WHILE */
 

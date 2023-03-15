@@ -8,7 +8,7 @@ void LedStart(void){
     HAL_TIM_PWM_Start(&htim2,TIM_CHANNEL_1);
 }
 
-void LedSetValue(unsigned int val){
+void LedSetValue(unsigned char val){
     // Configure le rapport cyclique de la PWM entre 0 et 255
     htim2.Instance->CCR1 = val;
 }

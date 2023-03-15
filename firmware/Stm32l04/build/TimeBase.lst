@@ -1,0 +1,80 @@
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccDEgXH0.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"TimeBase.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/TimeBase.c"
+  18              		.section	.text.TimeBaseStartIT,"ax",%progbits
+  19              		.align	1
+  20              		.global	TimeBaseStartIT
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  25              	TimeBaseStartIT:
+  26              	.LFB40:
+   1:Core/Src/TimeBase.c **** #include "TimeBase.h"
+   2:Core/Src/TimeBase.c **** #include "tim.h"
+   3:Core/Src/TimeBase.c **** 
+   4:Core/Src/TimeBase.c **** void TimeBaseStartIT(void){
+  27              		.loc 1 4 27 view -0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31 0000 10B5     		push	{r4, lr}
+  32              		.cfi_def_cfa_offset 8
+  33              		.cfi_offset 4, -8
+  34              		.cfi_offset 14, -4
+   5:Core/Src/TimeBase.c **** 
+   6:Core/Src/TimeBase.c ****     HAL_TIM_Base_Start_IT(&htim21);
+  35              		.loc 1 6 5 view .LVU1
+  36 0002 0248     		ldr	r0, .L2
+  37 0004 FFF7FEFF 		bl	HAL_TIM_Base_Start_IT
+  38              	.LVL0:
+   7:Core/Src/TimeBase.c **** }...
+  39              		.loc 1 7 1 is_stmt 0 view .LVU2
+  40              		@ sp needed
+  41 0008 10BD     		pop	{r4, pc}
+  42              	.L3:
+  43 000a C046     		.align	2
+  44              	.L2:
+  45 000c 00000000 		.word	htim21
+  46              		.cfi_endproc
+  47              	.LFE40:
+  49              		.text
+  50              	.Letext0:
+  51              		.file 2 "c:\\users\\billa\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+  52              		.file 3 "c:\\users\\billa\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccDEgXH0.s 			page 2
+
+
+  53              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l021xx.h"
+  54              		.file 5 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h"
+  55              		.file 6 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h"
+  56              		.file 7 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_tim.h"
+  57              		.file 8 "Core/Inc/tim.h"
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccDEgXH0.s 			page 3
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 TimeBase.c
+C:\Users\billa\AppData\Local\Temp\ccDEgXH0.s:19     .text.TimeBaseStartIT:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccDEgXH0.s:25     .text.TimeBaseStartIT:0000000000000000 TimeBaseStartIT
+C:\Users\billa\AppData\Local\Temp\ccDEgXH0.s:45     .text.TimeBaseStartIT:000000000000000c $d
+
+UNDEFINED SYMBOLS
+HAL_TIM_Base_Start_IT
+htim21

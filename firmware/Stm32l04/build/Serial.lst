@@ -1,0 +1,181 @@
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s 			page 1
+
+
+   1              		.cpu cortex-m0plus
+   2              		.arch armv6s-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 0
+  12              		.eabi_attribute 18, 4
+  13              		.file	"Serial.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "Core/Src/Serial.c"
+  18              		.section	.text.SerialTransmit,"ax",%progbits
+  19              		.align	1
+  20              		.global	SerialTransmit
+  21              		.syntax unified
+  22              		.code	16
+  23              		.thumb_func
+  25              	SerialTransmit:
+  26              	.LVL0:
+  27              	.LFB40:
+   1:Core/Src/Serial.c **** #include "Serial.h"
+   2:Core/Src/Serial.c **** #include "usart.h"
+   3:Core/Src/Serial.c **** 
+   4:Core/Src/Serial.c **** // Cette fonction pourra être utilisée par le moniteur serie VSCode
+   5:Core/Src/Serial.c **** unsigned char SerialTransmit(char * pData, unsigned short Size){
+  28              		.loc 1 5 64 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		.loc 1 5 64 is_stmt 0 view .LVU1
+  33 0000 70B5     		push	{r4, r5, r6, lr}
+  34              		.cfi_def_cfa_offset 16
+  35              		.cfi_offset 4, -16
+  36              		.cfi_offset 5, -12
+  37              		.cfi_offset 6, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0600     		movs	r6, r0
+  40 0004 0D00     		movs	r5, r1
+   6:Core/Src/Serial.c ****          for(uint16_t i = 0 ; i< Size; i++)
+  41              		.loc 1 6 10 is_stmt 1 view .LVU2
+  42              	.LBB2:
+  43              		.loc 1 6 14 view .LVU3
+  44              	.LVL1:
+  45              		.loc 1 6 23 is_stmt 0 view .LVU4
+  46 0006 0024     		movs	r4, #0
+  47              		.loc 1 6 10 view .LVU5
+  48 0008 08E0     		b	.L2
+  49              	.LVL2:
+  50              	.L3:
+   7:Core/Src/Serial.c ****          {
+   8:Core/Src/Serial.c ****             HAL_UART_Transmit(&huart2, (unsigned short *)&pData[i], Size, HAL_MAX_DELAY);
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s 			page 2
+
+
+  51              		.loc 1 8 13 is_stmt 1 discriminator 3 view .LVU6
+  52              		.loc 1 8 58 is_stmt 0 discriminator 3 view .LVU7
+  53 000a 3119     		adds	r1, r6, r4
+  54              		.loc 1 8 13 discriminator 3 view .LVU8
+  55 000c 0123     		movs	r3, #1
+  56 000e 0548     		ldr	r0, .L4
+  57 0010 5B42     		rsbs	r3, r3, #0
+  58 0012 2A00     		movs	r2, r5
+  59 0014 FFF7FEFF 		bl	HAL_UART_Transmit
+  60              	.LVL3:
+   6:Core/Src/Serial.c ****          for(uint16_t i = 0 ; i< Size; i++)
+  61              		.loc 1 6 41 is_stmt 1 discriminator 3 view .LVU9
+  62 0018 0134     		adds	r4, r4, #1
+  63              	.LVL4:
+   6:Core/Src/Serial.c ****          for(uint16_t i = 0 ; i< Size; i++)
+  64              		.loc 1 6 41 is_stmt 0 discriminator 3 view .LVU10
+  65 001a A4B2     		uxth	r4, r4
+  66              	.LVL5:
+  67              	.L2:
+   6:Core/Src/Serial.c ****          for(uint16_t i = 0 ; i< Size; i++)
+  68              		.loc 1 6 32 is_stmt 1 discriminator 1 view .LVU11
+  69 001c AC42     		cmp	r4, r5
+  70 001e F4D3     		bcc	.L3
+  71              	.LBE2:
+   9:Core/Src/Serial.c ****          }
+  10:Core/Src/Serial.c ****          
+  11:Core/Src/Serial.c **** 
+  12:Core/Src/Serial.c ****          return 0;
+  72              		.loc 1 12 10 view .LVU12
+  13:Core/Src/Serial.c **** }
+  73              		.loc 1 13 1 is_stmt 0 view .LVU13
+  74 0020 0020     		movs	r0, #0
+  75              		@ sp needed
+  76              	.LVL6:
+  77              	.LVL7:
+  78              		.loc 1 13 1 view .LVU14
+  79 0022 70BD     		pop	{r4, r5, r6, pc}
+  80              	.L5:
+  81              		.align	2
+  82              	.L4:
+  83 0024 00000000 		.word	huart2
+  84              		.cfi_endproc
+  85              	.LFE40:
+  87              		.section	.text.SerialReceiveChar,"ax",%progbits
+  88              		.align	1
+  89              		.global	SerialReceiveChar
+  90              		.syntax unified
+  91              		.code	16
+  92              		.thumb_func
+  94              	SerialReceiveChar:
+  95              	.LVL8:
+  96              	.LFB41:
+  14:Core/Src/Serial.c **** 
+  15:Core/Src/Serial.c **** // Dans cet exemple, on fait du polling, et c'est pas très grave
+  16:Core/Src/Serial.c **** void SerialReceiveChar(char * pData, unsigned short Size){
+  97              		.loc 1 16 58 is_stmt 1 view -0
+  98              		.cfi_startproc
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s 			page 3
+
+
+  99              		@ args = 0, pretend = 0, frame = 0
+ 100              		@ frame_needed = 0, uses_anonymous_args = 0
+ 101              		.loc 1 16 58 is_stmt 0 view .LVU16
+ 102 0000 10B5     		push	{r4, lr}
+ 103              		.cfi_def_cfa_offset 8
+ 104              		.cfi_offset 4, -8
+ 105              		.cfi_offset 14, -4
+ 106 0002 0A00     		movs	r2, r1
+  17:Core/Src/Serial.c **** 
+  18:Core/Src/Serial.c ****         HAL_UART_Receive(&huart2, (unsigned short *)pData, Size, HAL_MAX_DELAY);
+ 107              		.loc 1 18 9 is_stmt 1 view .LVU17
+ 108 0004 0123     		movs	r3, #1
+ 109 0006 034C     		ldr	r4, .L7
+ 110 0008 5B42     		rsbs	r3, r3, #0
+ 111 000a 0100     		movs	r1, r0
+ 112              	.LVL9:
+ 113              		.loc 1 18 9 is_stmt 0 view .LVU18
+ 114 000c 2000     		movs	r0, r4
+ 115              	.LVL10:
+ 116              		.loc 1 18 9 view .LVU19
+ 117 000e FFF7FEFF 		bl	HAL_UART_Receive
+ 118              	.LVL11:
+  19:Core/Src/Serial.c **** 
+  20:Core/Src/Serial.c **** }...
+ 119              		.loc 1 20 1 view .LVU20
+ 120              		@ sp needed
+ 121 0012 10BD     		pop	{r4, pc}
+ 122              	.L8:
+ 123              		.align	2
+ 124              	.L7:
+ 125 0014 00000000 		.word	huart2
+ 126              		.cfi_endproc
+ 127              	.LFE41:
+ 129              		.text
+ 130              	.Letext0:
+ 131              		.file 2 "c:\\users\\billa\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 132              		.file 3 "c:\\users\\billa\\appdata\\roaming\\code\\user\\globalstorage\\bmd.stm32-for-vscode\\@xpa
+ 133              		.file 4 "Drivers/CMSIS/Device/ST/STM32L0xx/Include/stm32l021xx.h"
+ 134              		.file 5 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_def.h"
+ 135              		.file 6 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_dma.h"
+ 136              		.file 7 "Drivers/STM32L0xx_HAL_Driver/Inc/stm32l0xx_hal_uart.h"
+ 137              		.file 8 "Core/Inc/usart.h"
+ARM GAS  C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:0000000000000000 Serial.c
+C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s:19     .text.SerialTransmit:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s:25     .text.SerialTransmit:0000000000000000 SerialTransmit
+C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s:83     .text.SerialTransmit:0000000000000024 $d
+C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s:88     .text.SerialReceiveChar:0000000000000000 $t
+C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s:94     .text.SerialReceiveChar:0000000000000000 SerialReceiveChar
+C:\Users\billa\AppData\Local\Temp\ccVLFcv1.s:125    .text.SerialReceiveChar:0000000000000014 $d
+
+UNDEFINED SYMBOLS
+HAL_UART_Transmit
+huart2
+HAL_UART_Receive
