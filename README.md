@@ -14,7 +14,7 @@
 
 #### 3.1 Activation des LL drivers
 
-##### 2. Lors de la génération de code avec la bibliothèque LL, on remarque les changements cde synthaxe des appels de focntions.  
+##### 2. Lors de la génération de code avec la bibliothèque LL, on remarque les changements de synthaxe des appels de fonctions.  
 
 ##### 4. __STATIC_INLINE permet de définir une fonction en ligne et de la rendre statique.
 
