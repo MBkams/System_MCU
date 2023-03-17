@@ -30,8 +30,14 @@
 
 ##### 3. Les valeurs de PSC et ARR sont 125 et 255 respectivement.
 
+##### 6. La routine d'interruption se situe au nivau TIM21_IRQHandler(void). 
 
+##### 7. Avec l'utilisation de la bibliothèque LL, il doit manquer la remise à zero du flag.
+
+##### 8. Cela peut entraîner la routine d'interuption en boucle. 
+
+##### 9. Il faut faire une remise à zero du flag au 
 
 #### 3.4 UART, un simple echo
 
-##### 5.
+##### 5. J'ai modifié la défintion des fonctions SerialTransmit et SerialTransmit afin de les adapter avec HAL :).
