@@ -16,6 +16,19 @@
 4) Quelle page de la datasheet nous indique les valeurs de condensateurs ? :
    la valeur de condensateurs des  du DAC est donnée en page 25 de la datasheet.
 
+6) Quel est le rôle de la broche CS ?
+La broche CS correspond au « Chip Enable » . Un état bas sur cette broche permet d’activer la clock et les données.
+
+7) Quel est le rôle de la broche LDAC ?
+La croche LDAC est utilisée pour transférer le registre de verrouillage d'entrée vers le registre du DAC. Lorsque cette broche est à létat bas, la sortie VOUT est mis à jour avec le contenu du registre d'entrée. 
+
+8) Pourquoi le signal MISO n’est pas utilisé ?
+Le signal MISO a été connecté directement au STM32, comme décrit dans la procédure. Le signal MOSI transmets les données du maître, le STM32, jusqu’à l’esclave et inversement pour le signal MISO (de l’esclave au maître). Comme on souhaite seulement communiquer du maître jusqu’à l’esclave, on a pas besoin d’utiliser le signal MISO.
+
+10) Où trouve-t-on les indications du pinout du connecteur SWD ?
+On trouve ces indications dans le manuel d’utilisation.
+
+
 ### 3.1 Activation des LL drivers
 
 ##### 2. Lors de la génération de code avec la bibliothèque LL, on remarque les changements de synthaxe des appels de fonctions.
