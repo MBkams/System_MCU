@@ -36,8 +36,8 @@
 
 ##### 8. Cela peut entraîner la routine d'interuption en boucle. 
 
-##### 9. Il faut faire une remise à zero du flag au 
+##### 9. Il faut faire une remise à zero du flag.
 
-#### 3.4 UART, un simple echo
+### 3.4 UART, un simple echo
 
-##### 5. J'ai modifié la défintion des fonctions SerialTransmit et SerialTransmit afin de les adapter avec HAL :).
+##### 5. J'ai modifié la défintion des fonctions SerialTransmit et SerialReceiveChar afin de les adapter avec HAL :)
