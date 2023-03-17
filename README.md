@@ -36,6 +36,12 @@ Ces informations corresponent aux dimensions des composants. Exemple avec 0805 :
 4) Que signifie LQFP ? SOT-223 ? SOIC ?
 QFP décrit le package du composent, cela signifie : Quad Flat Package, qui est un circuit intégré monté en surface. Et LQFP signifie : Low-profile Quad Flat Package, voulant dire que le package est plus petit que le PCB.
 
+SOT : Small-Outline Transistor.
+C'est une famille de transistor discrets pour des montages en surface.
+
+SOIC : Small Outline Integrated Circuit 
+Boîtier de circuit intégré monté en surface qui occupe une surface inférieure d’environ 30 à 50% à celle d’un boîtier double en ligne (DIP) équivalent, avec une épaisseur typique inférieure de 70%. Ils sont généralement disponibles dans les mêmes brochages que leurs homologues DIP IC. La convention pour nommer le package est SOIC ou SO suivi du nombre de broches. Par exemple, un 4011 à 14 broches serait logé dans un boîtier SOIC-14 ou SO-14. (oui ça vient de Wikipédia, mais on a lu !)
+
 ### 3.1 Activation des LL drivers
 
 ##### 2. Lors de la génération de code avec la bibliothèque LL, on remarque les changements de synthaxe des appels de fonctions.
