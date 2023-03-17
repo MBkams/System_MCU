@@ -8,7 +8,7 @@
 14) Quel est le rôle de L1, C5 et C7 ? :
     Le rôle des composants L1, C5 et C7 est de filtrer la tension d'alimentation venant du 3,3V. L'association de ces composants forme un filtre passe-bas du second ordre.
 
-#### 3. Le reste du schéma
+### 3. Le reste du schéma
 
 3) Quelle page de la datasheet indique les valeurs des condensateurs ? :
    La page 1 : elle indique que la capacité doit être au moins de 0,47uF.
