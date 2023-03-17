@@ -28,6 +28,13 @@ Le signal MISO a été connecté directement au STM32, comme décrit dans la pro
 10) Où trouve-t-on les indications du pinout du connecteur SWD ?
 On trouve ces indications dans le manuel d’utilisation.
 
+### 4. Affectation des empreintes
+
+3) Que signifie 0805 ? 0603 ? 1206 ?
+Ces informations corresponent aux dimensions des composants. Exemple avec 0805 : le composent mesure 0.08 pouces sur 0.05 pouces. (a noter que 0.1 pouce égal 2,54 mm)
+
+4) Que signifie LQFP ? SOT-223 ? SOIC ?
+QFP décrit le package du composent, cela signifie : Quad Flat Package, qui est un circuit intégré monté en surface. Et LQFP signifie : Low-profile Quad Flat Package, voulant dire que le package est plus petit que le PCB.
 
 ### 3.1 Activation des LL drivers
 
